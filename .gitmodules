@@ -1,0 +1,3 @@
+[submodule "SerenePoC/Serenity"]
+	path = SerenePoC/Serenity
+	url = https://github.com/volkanceylan/Serenity.git
