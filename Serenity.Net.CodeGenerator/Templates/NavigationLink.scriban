@@ -1,4 +1,0 @@
-using Serenity.Navigation;
-using MyPages = {{ViewPageNamespace}};
-
-[assembly: NavigationLink(int.MaxValue, "{{ModuleSlash}}{{Title}}", typeof(MyPages.{{ViewPageClassName}}), icon: null)]

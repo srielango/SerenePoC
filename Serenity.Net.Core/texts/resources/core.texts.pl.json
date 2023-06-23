@@ -1,6 +1,0 @@
-{
-  "Authorization.AccessDenied": "Ta prośba została odrzucona!",
-  "Authorization.NotLoggedIn": "Do tego żądania wymagane jest upoważnienie!",
-  "Db.Shared.RecordId": "ID",
-  "Services.GenericErrorMessage": "Podczas przetwarzania żądania wystąpił błąd"
-}
