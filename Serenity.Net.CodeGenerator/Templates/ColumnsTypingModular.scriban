@@ -1,0 +1,4 @@
+﻿
+export class {{ColumnsClassName}} {
+    static columnsKey = '{{ColumnsKey}}';
+}

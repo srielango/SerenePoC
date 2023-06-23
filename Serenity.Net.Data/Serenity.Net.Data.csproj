@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	<TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>Serenity.Net.Data</AssemblyName>
+    <Title>Serenity Platform - Data Library</Title>
+    <Description>Contains helper classes for SQL data connections, fluent SQL builders, criteria, join definitions, data mapping, validation...</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Serenity.Net.Core\Serenity.Net.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.0" />
+  </ItemGroup>
+</Project>
