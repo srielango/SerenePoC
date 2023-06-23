@@ -1,6 +1,7 @@
 using SerenePoC.Web.Modules.MovieDB.Movie;
 using Serenity.ComponentModel;
 using System;
+using System.Collections.Generic;
 
 namespace SerenePoC.MovieDB.Forms;
 
@@ -17,5 +18,5 @@ public class MovieForm
     public DateTime ReleaseDate { get; set; }
     public int Runtime { get; set; }
     public MovieKind Kind { get; set; }
-    public int GenreId { get; set; }
+    public List<int> GenreList { get; set; }
 }

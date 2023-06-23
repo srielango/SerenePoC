@@ -3,6 +3,7 @@ using Serenity.ComponentModel;
 using Serenity.Data;
 using Serenity.Data.Mapping;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace SerenePoC.MovieDB;
@@ -11,6 +12,7 @@ namespace SerenePoC.MovieDB;
 [DisplayName("Movies"), InstanceName("Movie")]
 [ReadPermission("Administration:General")]
 [ModifyPermission("Administration:General")]
+
 public sealed class MovieRow : Row<MovieRow.RowFields>, IIdRow, INameRow
 {
     [DisplayName("Movie Id"), Identity, IdProperty]
@@ -69,19 +71,15 @@ public sealed class MovieRow : Row<MovieRow.RowFields>, IIdRow, INameRow
         set => fields.Kind[this] = value;
     }
 
-    [DisplayName("Genre"), ForeignKey("[mov].Genre", "GenreId"), LeftJoin("g")]
-    public int? GenreId
+    [DisplayName("Genres")]
+    [LookupEditor(typeof(GenreRow), Multiple = true), NotMapped]
+    [LinkingSetRelation(typeof(MovieGenresRow), "MovieId", "GenreId")]
+    public List<int> GenreList
     {
-        get => fields.GenreId[this];
-        set => fields.GenreId[this] = value;
+        get => fields.GenreList[this];
+        set => fields.GenreList[this] = value;
     }
 
-    [DisplayName("Genre"), Expression("g.Name")]
-    public string GenreName
-    {
-        get => fields.GenreName[this];
-        set => fields.GenreName[this] = value;
-    }
     public class RowFields : RowFieldsBase
     {
         public Int32Field MovieId;
@@ -92,8 +90,6 @@ public sealed class MovieRow : Row<MovieRow.RowFields>, IIdRow, INameRow
         public DateTimeField ReleaseDate;
         public Int32Field Runtime;
         public EnumField<MovieKind> Kind;
-        public Int32Field GenreId;
-        public StringField GenreName;
-
+        public ListField<Int32> GenreList;
     }
 }
