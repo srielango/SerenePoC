@@ -56,7 +56,7 @@ export class MovieGrid extends EntityGrid<MovieRow, any> {
                 new Aggregators.Max('Runtime')
             ]
         });
-
+        grid.
         return grid;
     }
 

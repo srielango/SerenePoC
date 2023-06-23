@@ -1,3 +1,6 @@
 [submodule "SerenePoC/Serenity"]
 	path = SerenePoC/Serenity
 	url = https://github.com/volkanceylan/Serenity.git
+[submodule "SerenePoC/common-features"]
+	path = SerenePoC/common-features
+	url = https://github.com/serenity-is/common-features.git

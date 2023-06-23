@@ -27,8 +27,10 @@
     <PackageReference Include="Serenity.Extensions" Version="6.7.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\common-features\src\Serenity.Extensions\Serenity.Extensions.csproj" />
     <ProjectReference Include="..\Serenity\src\Serenity.Assets\Serenity.Assets.csproj" />
     <ProjectReference Include="..\Serenity\src\Serenity.Net.Web\Serenity.Net.Web.csproj" />
+    <ProjectReference Include="..\Serenity\src\Serenity.Scripts\Serenity.Scripts.csproj" />
   </ItemGroup>
   <Target Name="NpmInstall" BeforeTargets="BeforeBuild" Condition="!Exists('node_modules\@types\jquery\index.d.ts')">
     <Message Text="Installing NPM packages..." Importance="high" />
