@@ -1,4 +1,4 @@
-﻿using FluentMigrator.Runner;
+using FluentMigrator.Runner;
 using FluentMigrator.Runner.Conventions;
 using FluentMigrator.Runner.Initialization;
 using FluentMigrator.Runner.Processors;
@@ -19,7 +19,6 @@ namespace SerenePoC
     {
         private static readonly string[] databaseKeys = new[] {
             "Default"
-            , "Northwind"
         };
 
         public bool SkippedMigrations { get; private set; }
@@ -185,12 +184,6 @@ namespace SerenePoC
                 Path.GetDirectoryName(typeof(DataMigrations).Assembly.Location));
             var migrationNamespace = "SerenePoC.Migrations." + databaseKey + "DB";
             var migrationAssemblies = new[] { typeof(DataMigrations).Assembly };
-
-            if (databaseKey.Equals("Northwind", StringComparison.OrdinalIgnoreCase))
-            {
-                migrationNamespace = typeof(Serenity.Demo.Northwind.Migrations.MigrationAttribute).Namespace;
-                migrationAssemblies = new[] { typeof(Serenity.Demo.Northwind.Migrations.MigrationAttribute).Assembly };
-            }
 
             var serviceProvider = new ServiceCollection()
                 .AddLogging(lb => lb.AddFluentMigratorConsole())

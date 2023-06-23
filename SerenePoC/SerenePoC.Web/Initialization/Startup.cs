@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
@@ -50,8 +50,6 @@ namespace SerenePoC
                 typeof(IDynamicScriptManager).Assembly,
                 typeof(Startup).Assembly,
                 typeof(Serenity.Extensions.EnvironmentSettings).Assembly,
-                typeof(Serenity.Demo.Northwind.CustomerPage).Assembly,
-                typeof(Serenity.Demo.BasicSamples.BasicSamplesPage).Assembly,
             }));
 
             services.Configure<ConnectionStringOptions>(Configuration.GetSection(ConnectionStringOptions.SectionKey));
